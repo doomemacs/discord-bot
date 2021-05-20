@@ -1,0 +1,32 @@
+{
+    "apiKey": "...",
+
+    "noReply": {
+        "channels": [ "help", "help-nondoom" ],
+        "maxAge": 600,
+        "distance": 3,
+        "exemptRoles": [ "moderators" ],
+        "historyLimit": 100,
+        "reason": "**Reason:** your message didn't ping `@helpme` and wasn't a reply to another user. See our server's [#faq](https://discord.com/channels/406534637242810369/687089022040146045) for details."
+    },
+
+    "reminders": {
+        "help": {
+            "color": "#51afef",
+            "description": ":pushpin: **Welcome to <#406554085794381833>:** a space to get help with Emacs or Emacs-relevant issues _within_ a Doom Emacs environment. _[Read this](https://discord.com/channels/406534637242810369/687089022040146045/844353544822718485) before posting._"
+        },
+        "help-nondoom": {
+            "color": "#ff6600",
+            "description": ":pushpin: **This is <#806409569013858314>:** a support channel for Emacs or Emacs-relevant issues that occur in a __non-__Doom Emacs environment. _[Read this](https://discord.com/channels/406534637242810369/687089022040146045/844353544822718485) before posting._"
+        }
+    },
+
+    "qna": {
+        "channels": [ "help", "help-nondoom" ],
+        "rulesets": [
+            "./rules/howdoi.json",
+            "./rules/issues.json",
+            "./rules/smalltalk.json"
+        ]
+    }
+}

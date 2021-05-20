@@ -1,0 +1,25 @@
+{
+  "name": "doombot",
+  "version": "1.0.0",
+  "description": "Your friendly neighborhood demon slayer",
+  "main": "index.js",
+  "scripts": {
+    "bot": "node src/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doomemacs/discord-bot.git"
+  },
+  "author": "Henrik Lissner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/doomemacs/discord-bot/issues"
+  },
+  "homepage": "https://github.com/doomemacs/discord-bot",
+  "dependencies": {
+    "@nlpjs/basic": "^4.22.0",
+    "discord.js": "github:discordjs/discord.js",
+    "uuid": "^8.3.2"
+  }
+}
