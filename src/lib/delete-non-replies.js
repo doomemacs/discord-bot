@@ -20,7 +20,7 @@ function remove_message(message, reason) {
         embed: {
           title: ":warning: Your message was automatically deleted",
           description: reason +
-            "\n\n**Your message:**\n> " + Util.escapeMarkdown(m.content).split('\n').join('\n> ') + "\n\n" +
+            "\n\n**Your message:**\n```\n" + Util.cleanCodeBlockContent(m.content) + "\n```\n" +
             "(Have I made a mistake? Let <@135247072822558720> know in <#579039716662312990>)"
         }
       });
