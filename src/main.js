@@ -5,24 +5,23 @@ const client = new Client({ intents: ['GUILDS', 'GUILD_MESSAGES'] });
 const config = require('../config.json');
 
 /// Tasks
-const delete_non_replies = require('./lib/delete-non-replies')
-const sticky = require('./lib/sticky')
+const delete_non_replies = require('./lib/delete-non-replies');
+const sticky = require('./lib/sticky');
 // const qna = require('./lib/qna');
 
-// Slash Commands
+/// Slash Commands
 // const slash = [
 //   require('./commands/move.js'),
 //   require('./commands/roles.js')
 // ];
 // slash.forEach(cmd => client.on('interaction', cmd.onInteraction))
 
-let nlp;
-
+// let nlp;
 client.once('ready', async () => {
   // slash.forEach(cmd => client.application.commands.create(cmd.command));
   // nlp = await qna.init(config.qna);
 
-  console.log("Ready!")
+  console.log("Ready!");
 });
 
 
@@ -35,7 +34,7 @@ client.on('message', async (message) => {
   // previous messages (within a certain timeframe).
   if (!delete_non_replies(message, config.noReply)) {
     // Keep notice messages at the bottom of the channel, so it won't be missed.
-    sticky(message, config.reminders[message.channel.name])
+    sticky(message, config.reminders[message.channel.name]);
   }
 });
 
