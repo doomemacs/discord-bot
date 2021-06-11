@@ -8,7 +8,7 @@ function has_elapsed (time, ttl) {
 function is_direct_followup (message, distance, maxAge = 600, history = []) {
   // Is there another post by this message's author within DISTANCE posts?
   return history
-    .slice(0, distance)
+    .slice(-distance)
     .some(x => x.name === message.author.tag && has_elapsed(x.time, maxAge));
 }
 
@@ -72,6 +72,6 @@ module.exports = (message, { maxAge       = 600,
     time: (new Date()).getTime()
   });
   if (postHistory[channelName].length > 50) {
-    postHistory[channelName].pop();
+    postHistory[channelName].shift();
   }
 }
