@@ -16,15 +16,14 @@ function remove_message(message, reason) {
   message
     .delete()
     .then(m => {
-      m.author.send({
-        embed: {
-          title: ":warning: Your message was automatically deleted",
-          description: reason +
-            "\n\n**Your message:**\n```\n" + Util.cleanCodeBlockContent(m.content) + "\n```\n" +
-            "(Have I made a mistake? Let <@135247072822558720> know in <#579039716662312990>)"
-        }
-      });
-      console.log(`Deleted message from ${m.author.tag} in ${m.channel}`);
+      m.author.send(
+        ":warning: **Your message automatically deleted.**\n\n" +
+          "**Reason:** " + reason + "\n\n" +
+          "**Here is a copy of your message:**\n```\n" +
+          Util.cleanCodeBlockContent(m.content) + "\n```\n\n" +
+          "(Have I made a mistake? Let <@135247072822558720> know in <#579039716662312990>)"
+      );
+      console.log(`DOOMBOT :: Delete(${m.author.tag},#${m.channel.name}): ${m.content}`);
     });
 }
 
@@ -59,7 +58,7 @@ module.exports = (message, { maxAge       = 600,
     const posters = postHistory[channelName];
     if (!is_direct_followup(message, distance, maxAge, posters)) {
       if (!message.deletable || message.deleted) {
-        console.log(`${message.id} is not deletable`);
+        console.log(`DOOMBOT :: ${message.id} is not deletable`);
         return;
       }
       remove_message(message, reason);
