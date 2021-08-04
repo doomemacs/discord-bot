@@ -15,15 +15,15 @@ function is_direct_followup (message, distance, maxAge = 600, history = []) {
 function remove_message(message, reason) {
   message
     .delete()
-    .then(m => {
-      m.author.send(
+    .then(msg => {
+      msg.author.send(
         ":warning: **Your message automatically deleted.**\n\n" +
           "**Reason:** " + reason + "\n\n" +
           "**Here is a copy of your message:**\n```\n" +
-          Util.cleanCodeBlockContent(m.content) + "\n```\n\n" +
-          "(Have I made a mistake? Let <@135247072822558720> know in <#579039716662312990>)"
+          Util.escapeMarkdown(msg.content) + "\n```\n" +
+          "(Have I made a mistake? Let us know in <#579039716662312990>)"
       );
-      console.log(`DOOMBOT :: Delete(${m.author.tag},#${m.channel.name}): ${m.content}`);
+      console.log(`DOOMBOT :: Delete(${msg.author.tag},#${msg.channel.name}): ${msg.content}`);
     });
 }
 
