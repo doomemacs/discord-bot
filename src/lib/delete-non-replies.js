@@ -16,15 +16,15 @@ function remove_message(message, reason) {
   message
     .delete()
     .then(msg => {
+      console.log(`DOOMBOT :: Delete(${msg.author.tag},#${msg.channel.name}): ${msg.content}`);
       msg.author.send(
         ":warning: **Your message automatically deleted.**\n\n" +
           "**Reason:** " + reason + "\n\n" +
           "**Here is a copy of your message:**\n```\n" +
           Util.escapeMarkdown(msg.content) + "\n```\n" +
           "(Have I made a mistake? Let us know in <#579039716662312990>)"
-      );
-      console.log(`DOOMBOT :: Delete(${msg.author.tag},#${msg.channel.name}): ${msg.content}`);
-    });
+      ).catch(_ => console.error(`DOOMBOT :: Couldn't notify ${msg.author.name}`));
+    }).catch(console.error);
 }
 
 
