@@ -31,7 +31,7 @@ async function onInteraction (event) {
 
   if (event.commandName === 'moveto') {
     const channel = event.options.getChannel('channel');
-    const message = event.options.getString('message');
+    const message = event.options.getString('message').split('-').slice(-1)[0];
     const reason  = event.options.getString('reason');
 
     if (channel.id === event.channel.id) {
