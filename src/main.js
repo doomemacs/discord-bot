@@ -14,7 +14,7 @@ const sticky = require('./lib/sticky');
 
 /// Slash Commands
 const slash = [
-  // require('./commands/moveto.js'),
+  require('./commands/moveto.js'),
   // require('./commands/roles.js')
 ];
 
