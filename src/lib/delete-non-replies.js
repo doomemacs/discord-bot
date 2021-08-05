@@ -39,7 +39,6 @@ const postHistory = {};
 module.exports = (message, { maxAge       = 600,
                              distance     = 3,
                              channels     = ['*'],
-                             exemptRoles  = [],
                              historyLimit = 100,
                              reason       = "" }) =>
 {
@@ -47,12 +46,10 @@ module.exports = (message, { maxAge       = 600,
   if (!channels.includes('*') && !channels.includes(channelName))
     return;
 
-  if (postHistory[channelName] === undefined)
+  if (!postHistory[channelName])
     postHistory[channelName] = [];
 
   if (!message.member.deleted
-      && (exemptRoles.length === 0
-          || !message.member?.roles.cache.some(role => exemptRoles.includes(role.name)))
       && !message.mentions.users.first()
       && !message.mentions.roles.first()) {
     const posters = postHistory[channelName];

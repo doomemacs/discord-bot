@@ -5,7 +5,6 @@
         "channels": [ "help", "help-nondoom" ],
         "maxAge": 600,
         "distance": 3,
-        "exemptRoles": [ "moderators" ],
         "historyLimit": 100,
         "reason": "**Reason:** your message didn't ping `@helpme` and wasn't a reply to another user. See our server's [#faq](https://discord.com/channels/406534637242810369/687089022040146045) for details."
     },
