@@ -52,7 +52,7 @@ module.exports = (message, { maxAge       = 600,
 
   if (!message.member.deleted
       && (exemptRoles.length === 0
-          || !message.member.roles.cache.some(role => exemptRoles.includes(role.name)))
+          || !message.member?.roles.cache.some(role => exemptRoles.includes(role.name)))
       && !message.mentions.users.first()
       && !message.mentions.roles.first()) {
     const posters = postHistory[channelName];
