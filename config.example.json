@@ -1,23 +1,21 @@
 {
     "apiKey": "...",
 
+    "guilds": [
+        "..."
+    ],
+
     "noReply": {
         "channels": [ "help", "help-nondoom" ],
         "maxAge": 600,
         "distance": 3,
         "historyLimit": 100,
-        "reason": "**Reason:** your message didn't ping `@helpme` and wasn't a reply to another user. See our server's [#faq](https://discord.com/channels/406534637242810369/687089022040146045) for details."
+        "reason": "Your message didn't ping `@helpme` and wasn't a reply to another user. See our server's <#687089022040146045> for details."
     },
 
     "reminders": {
-        "help": {
-            "color": "#51afef",
-            "description": ":pushpin: **Welcome to <#406554085794381833>:** a space to get help with Emacs or Emacs-relevant issues _within_ a Doom Emacs environment. _[Read this](https://discord.com/channels/406534637242810369/687089022040146045/844353544822718485) before posting._"
-        },
-        "help-nondoom": {
-            "color": "#ff6600",
-            "description": ":pushpin: **This is <#806409569013858314>:** a support channel for Emacs or Emacs-relevant issues that occur in a __non-__Doom Emacs environment. _[Read this](https://discord.com/channels/406534637242810369/687089022040146045/844353544822718485) before posting._"
-        }
+        "help":         "> :pushpin: **This is <#406554085794381833>:** a support channel for **Doom Emacs users** to get Doom-specific solutions to Emacs-related issues. If you don't use Doom, post in <#806409569013858314> instead. To prevent the bot deleting your messages, read 'How do I ask for help' in <#687089022040146045>.",
+        "help-nondoom": "> :pushpin: **This is <#806409569013858314>:** a support channel for Emacs users that **don't use Doom** and want general solutions to Emacs-related issues. Doom users should post in <#406554085794381833> instead. To prevent the bot deleting your messages, read 'How do I ask for help' in <#687089022040146045>."
     },
 
     "qna": {
