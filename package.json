@@ -19,7 +19,7 @@
   "homepage": "https://github.com/doomemacs/discord-bot",
   "dependencies": {
     "@nlpjs/basic": "^4.22.0",
-    "discord.js": "github:discordjs/discord.js",
+    "discord.js": "^13.6.0",
     "uuid": "^8.3.2"
   }
 }
