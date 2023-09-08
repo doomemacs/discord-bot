@@ -1,6 +1,6 @@
 # discord-bot
 
-This is DoomBot, our friendly neighborhood Doom slayer, who helps us keep Doom's [Discord server](https://doomemacs.org/disocrd) neat and tidy.
+This is DoomBot, our friendly neighborhood Doom slayer, who helps us keep Doom's [Discord server](https://doomemacs.org/discord) neat and tidy.
 
 ## Features
 
